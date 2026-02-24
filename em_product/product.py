@@ -40,7 +40,6 @@ class Variant(BaseVariant):
 
 
 class ProductSource(BaseModel):
-    _id: str
     date: Any
     url: str
     source: str
@@ -112,7 +111,6 @@ class StandardProduct(BaseVariant):
     height: Optional[float]
     length: Optional[float]
     has_only_default_variant: Optional[bool]
-    price_retail: Optional[float] = None
 
     @field_validator("date")
     def validate_date(cls, value):
@@ -235,7 +233,6 @@ class SourceProduct(BaseVariant):
     height: Optional[float]
     length: Optional[float]
     has_only_default_variant: Optional[bool]
-    price_retail: Optional[float] = None
 
     @field_validator("specifications")
     def validate_specifications(cls, specs):

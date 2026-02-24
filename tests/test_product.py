@@ -60,7 +60,6 @@ class TestProduct(unittest.TestCase):
             "length": 15.0,
             "has_only_default_variant": False,
             "currency": "USD",
-            "price_retail": 15.0,
         }
 
     def tearDown(self):
