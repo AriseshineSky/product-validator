@@ -1,0 +1,4 @@
+pydantic
+lingua-language-detector
+elasticsearch<7
+lxml
