@@ -50,9 +50,9 @@ class ProductSource(BaseModel):
     images: Optional[str]
     product_id: Optional[Union[str, int]]
     title: Optional[str]
-    title_en: Optional[str]
+    title_en: Optional[str] = None
     description: Optional[str]
-    description_en: Optional[str]
+    description_en: Optional[str] = None
     summary: Optional[str]
     upc: Optional[str]
     brand: Optional[str]
@@ -88,9 +88,9 @@ class StandardProduct(BaseVariant):
     product_id: Union[str, int]
     existence: bool
     title: str
-    title_en: Optional[str]
+    title_en: Optional[str] = None
     description: Optional[str]
-    description_en: Optional[str]
+    description_en: Optional[str] = None
     summary: Optional[str]
     upc: Optional[str]
     brand: Optional[str]
