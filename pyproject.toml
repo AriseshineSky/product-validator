@@ -47,7 +47,7 @@ description = ""
 authors = [
     {name = "SmileintheSky",email = "befruitful12@gmail.com"}
 ]
-requires-python = ">=3.11,<4.0"
+requires-python = ">=3.9,<4.0"
 dependencies = [
     "pydantic (>=2.12.5,<3.0.0)",
     "checkdigit (>=0.5.0,<0.6.0)"
