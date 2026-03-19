@@ -80,6 +80,13 @@ class TestProduct(unittest.TestCase):
 
         self.assertIn("category must be unique", str(context.exception))
 
+    def test_weight_over_limit_raises_error(self):
+        product_data = {**self.product_data, "weight": 2.6}
+        with self.assertRaises(ValidationError) as context:
+            StandardProduct(**product_data)
+
+        self.assertIn("weight must be less than or equal to 2.5lb", str(context.exception))
+
 
 if __name__ == "__main__":
     unittest.main()

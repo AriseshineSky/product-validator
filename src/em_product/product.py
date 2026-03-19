@@ -204,6 +204,16 @@ class StandardProduct(BaseVariant):
 
         return description
 
+    @field_validator("weight")
+    def validate_weight(cls, weight):
+        if weight is None:
+            return weight
+
+        if weight > 2.5:
+            raise ValueError("weight must be less than or equal to 2.5lb")
+
+        return weight
+
 
 class SourceProduct(BaseVariant):
     date: datetime
@@ -316,3 +326,13 @@ class SourceProduct(BaseVariant):
             raise ValueError(str(e))
 
         return description
+
+    @field_validator("weight")
+    def validate_weight(cls, weight):
+        if weight is None:
+            return weight
+
+        if weight > 2.5:
+            raise ValueError("weight must be less than or equal to 2.5lb")
+
+        return weight
