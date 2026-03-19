@@ -91,18 +91,18 @@ class StandardProduct(BaseVariant):
     title_en: Optional[str] = None
     description: Optional[str]
     description_en: Optional[str] = None
-    summary: Optional[str]
+    summary: Optional[str] = None
     upc: Optional[str]
     brand: Optional[str]
     specifications: Optional[List[Dict[str, str]]]
     categories: Optional[str]
-    videos: Optional[str]
+    videos: Optional[str] = None
     options: Optional[List[OptionDict]]
     variants: Optional[List[Variant]]
-    returnable: Optional[bool]
-    reviews: Optional[int]
-    rating: Optional[float]
-    sold_count: Optional[int]
+    returnable: Optional[bool] = None
+    reviews: Optional[int] = None
+    rating: Optional[float] = None
+    sold_count: Optional[int] = None
     shipping_fee: float
     shipping_days_min: Optional[int]
     shipping_days_max: Optional[int]
