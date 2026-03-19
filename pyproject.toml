@@ -39,3 +39,29 @@ target-version = "py311"
 # Unlike Flake8, default to a complexity level of 10.
 max-complexity = 10
 
+
+[project]
+name = "product-validator"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "SmileintheSky",email = "befruitful12@gmail.com"}
+]
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "pydantic (>=2.12.5,<3.0.0)",
+    "checkdigit (>=0.5.0,<0.6.0)"
+]
+
+[tool.poetry]
+packages = [{ include = "em_product", from = "src" }]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.2,<10.0.0)"
+]
