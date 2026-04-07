@@ -214,6 +214,14 @@ class StandardProduct(BaseVariant):
 
         return weight
 
+    @field_validator("length")
+    def validate_length(cls, length):
+        if length is None:
+            return length
+
+        if length > 12:
+            raise ValueError("length must be less than or equal to 12 inches")
+
 
 class SourceProduct(BaseVariant):
     date: datetime
