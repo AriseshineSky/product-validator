@@ -57,7 +57,7 @@ class TestProduct(unittest.TestCase):
             "weight": 1.2,
             "width": 10.0,
             "height": 20.0,
-            "length": 15.0,
+            "length": 10.0,
             "has_only_default_variant": False,
             "currency": "USD",
         }
@@ -86,6 +86,13 @@ class TestProduct(unittest.TestCase):
             StandardProduct(**product_data)
 
         self.assertIn("weight must be less than or equal to 2.5lb", str(context.exception))
+
+    def test_length_over_limit_raises_error(self):
+        product_data = {**self.product_data, "length": 12.1}
+        with self.assertRaises(ValidationError) as context:
+            StandardProduct(**product_data)
+
+        self.assertIn("length must be less than or equal to 12 inches", str(context.exception))
 
 
 if __name__ == "__main__":

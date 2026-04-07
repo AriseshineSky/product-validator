@@ -222,6 +222,8 @@ class StandardProduct(BaseVariant):
         if length > 12:
             raise ValueError("length must be less than or equal to 12 inches")
 
+        return length
+
 
 class SourceProduct(BaseVariant):
     date: datetime
