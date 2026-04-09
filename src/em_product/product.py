@@ -195,8 +195,8 @@ class StandardProduct(BaseVariant):
     @field_validator("description")
     def validate_description(cls, description):
         try:
-            if description is None:
-                return description
+            if not description:
+                raise ValueError("Description can not be empty")
             if re.search(r"<a\s+[^>]*>", description, re.IGNORECASE):
                 raise ValueError("There should be no a tag in description")
         except Exception as e:
