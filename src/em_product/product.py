@@ -111,6 +111,8 @@ class StandardProduct(BaseVariant):
     height: Optional[float]
     length: Optional[float]
     has_only_default_variant: Optional[bool]
+    created_at: Optional[str] = None
+    updated_at: Optional[str] = None
 
     @field_validator("date")
     def validate_date(cls, value):
